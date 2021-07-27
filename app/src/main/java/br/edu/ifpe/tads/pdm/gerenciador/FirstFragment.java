@@ -22,7 +22,7 @@ public class FirstFragment extends Fragment {
 
     private FragmentFirstBinding binding;
     private ArrayList<String> filas;
-    private static final String [] arrFilas = {"TCC", "Att"};
+    private static final String [] arrFilas = {"TCC","Att","TCC","Att","TCC", "Att","TCC", "Att","TCC", "Att","TCC", "Att", "TCC", "Att"};
 
     @Override
     public View onCreateView(
