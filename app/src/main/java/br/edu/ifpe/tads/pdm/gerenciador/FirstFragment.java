@@ -9,10 +9,8 @@ import android.widget.ArrayAdapter;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.navigation.fragment.NavHostFragment;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -21,8 +19,8 @@ import br.edu.ifpe.tads.pdm.gerenciador.databinding.FragmentFirstBinding;
 public class FirstFragment extends Fragment {
 
     private FragmentFirstBinding binding;
-    private ArrayList<String> filas;
-    private static final String [] arrFilas = {"TCC","Att","TCC","Att","TCC", "Att","TCC", "Att","TCC", "Att","TCC", "Att", "TCC", "Att"};
+    private ArrayList<String> queues;
+    private static final String [] arrQueue = {"TCC","Att"};
 
     @Override
     public View onCreateView(
@@ -30,11 +28,11 @@ public class FirstFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        filas = new ArrayList<String>(Arrays.asList(arrFilas));
+        queues = new ArrayList<String>(Arrays.asList(arrQueue));
         binding = FragmentFirstBinding.inflate(inflater, container, false);
 
         binding.listaFilas.setAdapter(new ArrayAdapter<String>(
-                binding.getRoot().getContext(), R.layout.list_filas, R.id.fila_name, filas));
+                binding.getRoot().getContext(), R.layout.list_filas, R.id.fila_name, queues));
 
         binding.listaFilas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

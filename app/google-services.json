@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "838830250042",
+    "firebase_url": "https://gerenciador-e4404-default-rtdb.firebaseio.com",
+    "project_id": "gerenciador-e4404",
+    "storage_bucket": "gerenciador-e4404.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:838830250042:android:4395a8a893caa44c5efd03",
+        "android_client_info": {
+          "package_name": "br.edu.ifpe.tads.pdm.gerenciador"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "838830250042-8kfmkt3cc4cd21fq8ab0nm5vb6matc48.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrNLn1HDzZFi3_EdJDRMHffPtfhkdChPU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "838830250042-8kfmkt3cc4cd21fq8ab0nm5vb6matc48.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
