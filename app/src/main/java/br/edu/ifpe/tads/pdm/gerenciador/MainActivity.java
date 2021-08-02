@@ -2,20 +2,18 @@ package br.edu.ifpe.tads.pdm.gerenciador;
 
 import android.content.Intent;
 import android.os.Bundle;
-
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.view.View;
-
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
@@ -23,13 +21,13 @@ import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-
 import br.edu.ifpe.tads.pdm.gerenciador.databinding.ActivityMainBinding;
+import br.edu.ifpe.tads.pdm.gerenciador.model.Queue;
 import br.edu.ifpe.tads.pdm.gerenciador.model.User;
-
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,11 +36,22 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseAuthListener authListener;
     private DatabaseReference drUser;
-    private User user;
+    public static User user;
+    private DatabaseReference drQueue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+        this.mAuth = FirebaseAuth.getInstance();
+        this.authListener = new FirebaseAuthListener(this);
+
+        FirebaseDatabase fbDB = FirebaseDatabase.getInstance();
+
+        FirebaseUser fbUser = mAuth.getCurrentUser();
+        drUser = fbDB.getReference("users/" + fbUser.getUid());
+
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -52,12 +61,6 @@ public class MainActivity extends AppCompatActivity {
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
-        this.mAuth = FirebaseAuth.getInstance();
-        this.authListener = new FirebaseAuthListener(this);
-
-        FirebaseDatabase fbDB = FirebaseDatabase.getInstance();
-        FirebaseUser fbUser = mAuth.getCurrentUser();
-        drUser = fbDB.getReference("users/" + fbUser.getUid());
         drUser.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -131,6 +134,8 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+
 
     @Override
     public void onStart() {

@@ -14,10 +14,10 @@
         android:textColor="@color/black"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        app:layout_constraintBottom_toTopOf="@id/edit_name" />
+        app:layout_constraintBottom_toTopOf="@id/edit_queue_name" />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/edit_name"
+        android:id="@+id/edit_queue_name"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="18dp"
@@ -27,10 +27,10 @@
         android:textColor="@color/black"
         android:hint="Queue name"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@id/edit_description"/>
+        app:layout_constraintBottom_toTopOf="@id/edit_queue_description"/>
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/edit_description"
+        android:id="@+id/edit_queue_description"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="18dp"
