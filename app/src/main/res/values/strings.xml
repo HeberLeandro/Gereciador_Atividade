@@ -12,4 +12,5 @@
     <string name="action_sign_out">Sign Out</string>
     <string name="Sign_In">Sign In</string>
     <string name="Sign_Up">Sign Up</string>
+    <string name="register">Register</string>
 </resources>

@@ -33,6 +33,7 @@ public class AddQueue extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_queue);
+        getSupportActionBar().hide();
 
         edName = findViewById(R.id.edit_queue_name);
         edDescription = findViewById(R.id.edit_queue_description);
