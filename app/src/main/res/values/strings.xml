@@ -13,4 +13,6 @@
     <string name="Sign_In">Sign In</string>
     <string name="Sign_Up">Sign Up</string>
     <string name="register">Register</string>
+    <string name="queue">Register Queue</string>
+    <string name="task">Register Task</string>
 </resources>

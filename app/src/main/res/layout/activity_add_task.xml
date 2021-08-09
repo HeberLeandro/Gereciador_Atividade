@@ -4,53 +4,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".AddQueue">
 
     <TextView
-        android:layout_marginBottom="40dp"
-        android:text="Craete Task"
-        android:textAlignment="center"
-        android:textSize="25dp"
-        android:textColor="@color/black"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        app:layout_constraintBottom_toTopOf="@id/edit_name_task" />
+        android:id="@+id/task_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/task"
+        android:textSize="50sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="100dp"/>
+
+    <View
+        android:id="@+id/containerComponents"
+        style="@style/ContainerComponents"
+        app:layout_constraintTop_toBottomOf="@id/task_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/edit_name_task"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginEnd="18dp"
-        android:layout_marginBottom="30dp"
-        android:paddingStart="18dp"
-        android:textColor="@color/black"
+        style="@style/edit_text"
+        app:layout_constraintTop_toTopOf="@id/containerComponents"
+        app:layout_constraintStart_toStartOf="@id/containerComponents"
+        app:layout_constraintEnd_toEndOf="@id/containerComponents"
         android:hint="Task name"
-        android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@id/edit_description_task"/>
+        android:inputType="text"/>
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/edit_description_task"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginEnd="18dp"
-        android:layout_marginBottom="40dp"
-        android:paddingStart="18dp"
-        android:textColor="@color/black"
         android:hint="Task description"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@id/btn_create_task" />
+        style="@style/edit_text"
+        app:layout_constraintTop_toBottomOf="@id/edit_name_task"
+        app:layout_constraintStart_toStartOf="@id/containerComponents"
+        app:layout_constraintEnd_toEndOf="@id/containerComponents" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_create_task"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginHorizontal="120dp"
-        android:layout_marginBottom="272dp"
-        android:background="@color/purple_200"
-        android:text="ADD"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="120dp" />
+        style="@style/Button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_description_task"
+        android:text="ADD"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
